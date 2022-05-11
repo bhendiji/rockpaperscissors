@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Outlet, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./index.css";
 const App = () => {
   const rock = "rock";
@@ -13,7 +13,9 @@ const App = () => {
     lives: 3,
     show: true,
   });
-  const [scores, setScores] = React.useState([]);
+  const [scores, setScores] = React.useState(
+    JSON.parse(localStorage.getItem("scores")) || []
+  );
 
   //Buttons handling
   const handleInput = (value) => {
@@ -95,7 +97,6 @@ const App = () => {
     if (game.lives === 0) {
       setGame((prev) => ({ ...prev, show: false }));
       setScores((prev) => [game.score, ...prev]);
-      console.log(scores);
     }
   }, [game.lives]);
   return (
