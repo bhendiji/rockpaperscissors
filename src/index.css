@@ -17,18 +17,36 @@ button {
     justify-content: flex-end;
 }
 
-.nav>li {
-    list-style: none;
+.darkNav {
+    background-color: hsl(222, 14%, 10%);
 }
 
-.section1 {
+.nav>li {
+    list-style: none;
+    padding: 30px;
+}
+
+.section2 {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 200px;
 }
 
-.section2 {
+.darkSection2 {
+    background-color: hsl(222, 14%, 10%);
+}
+
+.darkSection2First {
+    background-color: hsl(222, 14%, 10%);
+    color: azure;
+}
+
+.darkSection2End {
+    background-color: hsl(222, 14%, 10%);
+}
+
+.section3 {
     display: flex;
     justify-content: center;
 }

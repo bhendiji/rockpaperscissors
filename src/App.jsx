@@ -12,11 +12,16 @@ const App = () => {
     score: 0,
     lives: 3,
     show: true,
+    darkmode: false,
   });
   const [scores, setScores] = React.useState(
     JSON.parse(localStorage.getItem("scores")) || []
   );
 
+  //Dark Mode
+  const toggleDarkMode = () => {
+    setGame((prev) => ({ ...prev, darkmode: !prev.darkmode }));
+  };
   //Buttons handling
   const handleInput = (value) => {
     const choices = ["rock", "paper", "scissors"];
@@ -102,18 +107,25 @@ const App = () => {
   return (
     <>
       <section className="logo">
-        <ul className="nav">
+        <ul className={`nav ${game.darkmode ? "darkNav" : ""}`}>
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
             <NavLink to="/scores">Scores</NavLink>
           </li>
+          <li>
+            <button onClick={toggleDarkMode}>darkmode</button>
+          </li>
         </ul>
       </section>
-      <section className="section1">
+      <section className={`section2 ${game.darkmode ? "darkSection2" : ""}`}>
         {game.show ? (
-          <div className="section1First">
+          <div
+            className={`section2First ${
+              game.darkmode ? "darkSection2First" : ""
+            }`}
+          >
             <h1>
               computer choice: <span> {game.computerChoice} </span>
             </h1>
@@ -122,12 +134,14 @@ const App = () => {
             </h1>
           </div>
         ) : (
-          <div className="section2End">
+          <div
+            className={`section2End ${game.darkmode ? "darkSection2End " : ""}`}
+          >
             <h1>Bwahaha</h1>
           </div>
         )}
       </section>
-      <section className="section2">
+      <section className="section3">
         {game.show ? (
           <div className="buttons">
             <button onClick={() => handleInput(rock)}>Rock</button>
