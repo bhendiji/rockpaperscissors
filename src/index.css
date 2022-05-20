@@ -1,7 +1,16 @@
 * {
     padding: 0;
     margin: 0;
+}
+
+.app {
     background-color: papayawhip;
+    height: 100vh;
+    width: 100vw;
+}
+
+.darkApp {
+    background-color: hsl(222, 14%, 10%);
 }
 
 button {
@@ -15,10 +24,12 @@ button {
     height: 50px;
     display: flex;
     justify-content: flex-end;
+    background-color: papayawhip;
 }
 
 .darkNav {
     background-color: hsl(222, 14%, 10%);
+    color: white;
 }
 
 .nav>li {
@@ -31,6 +42,7 @@ button {
     justify-content: center;
     align-items: center;
     height: 200px;
+    background-color: papayawhip;
 }
 
 .darkSection2 {
@@ -49,6 +61,11 @@ button {
 .section3 {
     display: flex;
     justify-content: center;
+    background-color: papayawhip;
+}
+
+.darkSection3 {
+    background-color: hsl(222, 14%, 10%);
 }
 
 .buttons {
@@ -58,9 +75,15 @@ button {
 
 .buttons>button {
     margin-right: 20px;
+    background-color: papayawhip;
     font-size: 20px;
-    background-color: black;
+    background-color: hsl(222, 14%, 10%);
     color: azure;
+}
+
+.darkButtons {
+    background-color: hsl(222, 14%, 10%);
+    color: white;
 }
 
 .scoreBoard,
@@ -69,4 +92,15 @@ button {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: papayawhip;
+}
+
+.darkScoreBoard {
+    background-color: hsl(222, 14%, 10%);
+    color: white;
+}
+
+.darkResult {
+    background-color: hsl(222, 14%, 10%);
+    color: white;
 }

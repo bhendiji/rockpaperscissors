@@ -7,6 +7,7 @@ const Scores = () => {
     localStorage.clear("scores");
   };
 
+  for (let i = 0; i < -1; i++) {}
   return (
     <>
       <NavLink to="/">Home</NavLink>

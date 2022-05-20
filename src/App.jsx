@@ -105,7 +105,7 @@ const App = () => {
     }
   }, [game.lives]);
   return (
-    <>
+    <div className={`app ${game.darkmode ? "darkApp " : ""}`}>
       <section className="logo">
         <ul className={`nav ${game.darkmode ? "darkNav" : ""}`}>
           <li>
@@ -126,12 +126,8 @@ const App = () => {
               game.darkmode ? "darkSection2First" : ""
             }`}
           >
-            <h1>
-              computer choice: <span> {game.computerChoice} </span>
-            </h1>
-            <h1>
-              user choice: <span> {game.userChoice} </span>
-            </h1>
+            <h1>computer choice: {game.computerChoice}</h1>
+            <h1>user choice: {game.userChoice}</h1>
           </div>
         ) : (
           <div
@@ -141,9 +137,9 @@ const App = () => {
           </div>
         )}
       </section>
-      <section className="section3">
+      <section className={`section3 ${game.darkmode ? "darkSection3" : ""}`}>
         {game.show ? (
-          <div className="buttons">
+          <div className={`buttons ${game.darkmode ? "darkButtons" : ""}`}>
             <button onClick={() => handleInput(rock)}>Rock</button>
             <button onClick={() => handleInput(paper)}>Paper</button>
             <button onClick={() => handleInput(scissors)}>Scissors</button>
@@ -155,20 +151,16 @@ const App = () => {
           </div>
         )}
       </section>
-      <section className="scoreBoard">
-        <h1>
-          Live(s) left: <span>{game.lives}</span>
-        </h1>
-        <h1>
-          Score: <span>{game.score}</span>
-        </h1>
+      <section
+        className={`scoreBoard ${game.darkmode ? "darkScoreBoard" : ""}`}
+      >
+        <h1>Live(s) left: {game.lives}</h1>
+        <h1>Score: {game.score}</h1>
       </section>
-      <section className="result">
-        <h1>
-          Result: <span>{game.result}</span>
-        </h1>
+      <section className={`result ${game.darkmode ? "darkResult" : ""}`}>
+        <h1>Result: {game.result}</h1>
       </section>
-    </>
+    </div>
   );
 };
 
