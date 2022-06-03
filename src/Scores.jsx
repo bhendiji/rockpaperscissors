@@ -2,19 +2,26 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 const Scores = () => {
   const hmm = JSON.parse(localStorage.getItem("scores")) || [];
-  console.log(hmm);
+  let f = [hmm];
   const handleDelete = () => {
     localStorage.clear("scores");
+    window.location.reload();
   };
+  for (let i = 0; i < f[0].length - 1; i++) {
+    for (let j = 0; j < f[0].length - 1; j++) {
+      let temp = f[0][j];
+      f[0][j] = f[0][j + 1];
+      f[0][j + 1] = temp;
+    }
+  }
 
-  for (let i = 0; i < -1; i++) {}
   return (
     <>
       <NavLink to="/">Home</NavLink>
       <h1>Scores</h1>
       <ul>
         {hmm.map((score) => (
-          <li key={score}>{score}</li>
+          <li key={score * Math.random()}>{score}</li>
         ))}
       </ul>
       <h4>Clear highsores?</h4>
