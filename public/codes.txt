@@ -1,0 +1,2 @@
+background color #fefae0
+buttons #d6ccc2

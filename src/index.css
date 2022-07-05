@@ -3,14 +3,20 @@
     margin: 0;
 }
 
+.logo {
+    width: 100vw;
+    height: 50px;
+    background-color: white;
+}
+
 .app {
-    background-color: papayawhip;
+    background-color: #e0f4ff;
     height: 100vh;
     width: 100vw;
 }
 
 .darkApp {
-    background-color: hsl(222, 14%, 10%);
+    background-color: #1f2529;
 }
 
 button {
@@ -20,21 +26,26 @@ button {
 
 /* end of global styles */
 
+.logo {
+    background-color: #005786;
+}
+
 .nav {
     height: 50px;
     display: flex;
     justify-content: flex-end;
-    background-color: papayawhip;
+    /* background-color: papayawhip; */
 }
 
 .darkNav {
-    background-color: hsl(222, 14%, 10%);
+    /* background-color: hsl(222, 14%, 10%); */
     color: white;
 }
 
 .nav>li {
     list-style: none;
     padding: 30px;
+    text-decoration-color: white;
 }
 
 .section2 {
@@ -42,30 +53,34 @@ button {
     justify-content: center;
     align-items: center;
     height: 200px;
-    background-color: papayawhip;
+    /* background-color: papayawhip; */
+}
+
+.section2First>h1 {
+    font-size: 40px;
 }
 
 .darkSection2 {
-    background-color: hsl(222, 14%, 10%);
+    /* background-color: hsl(222, 14%, 10%); */
 }
 
 .darkSection2First {
-    background-color: hsl(222, 14%, 10%);
+    /* background-color: hsl(222, 14%, 10%); */
     color: azure;
 }
 
 .darkSection2End {
-    background-color: hsl(222, 14%, 10%);
+    /* background-color: hsl(222, 14%, 10%); */
 }
 
 .section3 {
     display: flex;
     justify-content: center;
-    background-color: papayawhip;
+    /* background-color: papayawhip; */
 }
 
 .darkSection3 {
-    background-color: hsl(222, 14%, 10%);
+    /* background-color: hsl(222, 14%, 10%); */
 }
 
 .buttons {
@@ -73,16 +88,18 @@ button {
     justify-content: space-around;
 }
 
-.buttons>button {
+.Buttons {
     margin-right: 20px;
-    background-color: papayawhip;
+    /* background-color: papayawhip; */
     font-size: 20px;
     background-color: hsl(222, 14%, 10%);
     color: azure;
 }
 
 .darkButtons {
-    background-color: hsl(222, 14%, 10%);
+    /* background-color: hsl(222, 14%, 10%);
+     */
+    background-color: #d6ccc2;
     color: white;
 }
 
@@ -92,15 +109,15 @@ button {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: papayawhip;
+    /* background-color: papayawhip; */
 }
 
 .darkScoreBoard {
-    background-color: hsl(222, 14%, 10%);
+    /* background-color: hsl(222, 14%, 10%); */
     color: white;
 }
 
 .darkResult {
-    background-color: hsl(222, 14%, 10%);
+    /* background-color: hsl(222, 14%, 10%); */
     color: white;
 }

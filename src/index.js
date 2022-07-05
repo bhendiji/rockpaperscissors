@@ -6,9 +6,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DashBoard from "./DashBoard";
 import Error from "./Error";
 import Login from "./Login";
+
+import "./index.css";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
+    <div className="logo">bhendi</div>
     <Routes>
       <Route path="/" element={<App />}></Route>
       <Route path="scores" element={<Scores />} />

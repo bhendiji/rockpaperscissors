@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "./index.css";
+import { motion } from "framer-motion";
+
+// app ui start at 110
 const App = () => {
   const rock = "rock";
   const paper = "paper";
@@ -115,7 +118,12 @@ const App = () => {
             <NavLink to="/scores">Scores</NavLink>
           </li>
           <li>
-            <button onClick={toggleDarkMode}>darkmode</button>
+            <motion.button
+              whileHover={{ scale: 1.15 }}
+              onClick={toggleDarkMode}
+            >
+              darkmode
+            </motion.button>
           </li>
         </ul>
       </section>
@@ -126,8 +134,14 @@ const App = () => {
               game.darkmode ? "darkSection2First" : ""
             }`}
           >
-            <h1>computer choice: {game.computerChoice}</h1>
-            <h1>user choice: {game.userChoice}</h1>
+            <h1>
+              COMPUTER CHOICE <br />
+              {game.computerChoice}
+            </h1>
+            <h1>
+              USER CHOICE <br />
+              {game.userChoice}
+            </h1>
           </div>
         ) : (
           <div
@@ -137,20 +151,7 @@ const App = () => {
           </div>
         )}
       </section>
-      <section className={`section3 ${game.darkmode ? "darkSection3" : ""}`}>
-        {game.show ? (
-          <div className={`buttons ${game.darkmode ? "darkButtons" : ""}`}>
-            <button onClick={() => handleInput(rock)}>Rock</button>
-            <button onClick={() => handleInput(paper)}>Paper</button>
-            <button onClick={() => handleInput(scissors)}>Scissors</button>
-          </div>
-        ) : (
-          <div className="playAgainButton">
-            <h1>Want to play again?</h1>
-            <button onClick={newGame}>click me!</button>
-          </div>
-        )}
-      </section>
+
       <section
         className={`scoreBoard ${game.darkmode ? "darkScoreBoard" : ""}`}
       >
@@ -159,6 +160,42 @@ const App = () => {
       </section>
       <section className={`result ${game.darkmode ? "darkResult" : ""}`}>
         <h1>Result: {game.result}</h1>
+      </section>
+      <section className={`section3 ${game.darkmode ? "darkSection3" : ""}`}>
+        {game.show ? (
+          <div className={`buttons `}>
+            <motion.button
+              className={`Buttons ${game.darkmode ? "darkButtons" : ""}`}
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.85 }}
+              onClick={() => handleInput(rock)}
+            >
+              Rock
+            </motion.button>
+            <motion.button
+              className={` Buttons ${game.darkmode ? "darkButtons" : ""}`}
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.85 }}
+              onClick={() => handleInput(paper)}
+            >
+              Paper
+            </motion.button>
+            <motion.button
+              className={`Buttons ${game.darkmode ? "darkButtons" : ""}`}
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.85 }}
+              // whileFocus={{ scale: 1.15 }}
+              onClick={() => handleInput(scissors)}
+            >
+              Scissors
+            </motion.button>
+          </div>
+        ) : (
+          <div className="playAgainButton">
+            <h1>Want to play again?</h1>
+            <button onClick={newGame}>click me!</button>
+          </div>
+        )}
       </section>
     </div>
   );
